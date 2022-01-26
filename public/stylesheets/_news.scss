@@ -1,0 +1,206 @@
+.news-container{
+    background-color: $body_background_color;
+    @include flexCenter(column);
+    &__block{
+        margin-top: 120px;
+        width: 1170px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        &__left{
+            @include flexCenter(column);
+            &__post{
+                margin-bottom: 40px;
+                background-color: white;
+                width: 770px;
+                height: 840px;
+                &__image{
+                    background-image: url("/images/r1.jpg");
+                      background-repeat: no-repeat;
+                      background-position: center;
+                      background-size: cover;
+                    width: 100%;
+                    height: 460px;
+                }
+                &__category{
+                    @include flexCenter(column);
+                    width: 118px;
+                    height: 30px;
+                    color: white;
+                    font-size: 14px;
+                    margin-top: 50px;
+                    margin-left: 50px;
+                    background-color: $mainColor;
+                }
+                &__title{
+                    font-family: $font-family1;
+                    margin-left: 50px;
+                    margin-top: 25px;
+                    font-size: 42px;
+                }
+                &__icons{
+                    margin-top: 23px;
+                    margin-left: 50px;
+                    font-size: 14px;
+                    color: $grayColor1; 
+                }
+                &__text{
+                    font-size: 16px;
+                    color: $grayColor1;
+                    margin-top: 20px;
+                    margin-left: 50px;
+                    margin-right: 50px;
+                }
+                &__down{
+                    height: 50px;
+                    width: 670px;
+                    margin-top: 22px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    &__author{
+                        margin-left: 50px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        &__image{
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 25px;
+                            background-image: url("/images/happy_face.jpg");
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: cover;
+                        }
+                        &__name{
+                            margin-left: 20px;
+                            font-size: 16px;
+                            color: black;
+                        }
+                    }
+                    &__read-more{
+                    }
+                }
+            }
+        }
+        &__right{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 350px;
+            &__about-me{
+                @include flexCenter(column);
+                width: 100%;
+                height: 450px;
+                background-color: white;
+                &__about-me{
+                    font-size: 20px;
+                    align-text: left;
+                    margin-bottom: 20px;
+                }
+                &__image{
+                    background-image: url("/images/happy_face.jpg");
+                      background-repeat: no-repeat;
+                      background-position: center;
+                      background-size: cover;
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 100px;
+                }
+                &__title{
+                    font-family: $font-family1;
+                    font-size: 24px;
+                    letter-spacing: -0.72px;
+                    margin-top: 27px;
+                }
+                &__text{
+                    margin-top: 27px;
+                    font-size: 14px;
+                    text-align: center;
+                }
+                &__icons{
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin-top: 20px;
+                    i{
+                        margin-left: 20px;
+                        margin-right: 20px;
+                    }
+                    
+                }
+            }
+            &__search{
+                @include flexCenter(column);
+                width: 100%;
+                margin-top: 40px;
+                height: 200px;
+                background-color: white;
+                &__title{
+                    font-family: $font-family1;
+                    font-size: 20px;
+                }
+                &__card{
+                    width: 270px;
+                    height: 60px;
+                    margin-top: 38px;
+                    &__input{
+                        background-color: $body_background_color;
+                        height: 100%;
+                        border: none;
+                    }
+                    &__button{
+                        width: 60px;
+                        height: 100%;
+                        background-color: $mainColor;
+                        color: white;
+                    }
+                }
+            }
+            &__feed{
+                background-color: white;
+                width: 100%;
+                margin-top: 30px;
+                &__title{
+                    font-family: $font-family1;
+                    font-size: 20px;
+                    text-align: left;
+                    margin-top: 30px;
+                    margin-left: 30px;
+                }
+                &__post{
+                    @include flexCenter(row);
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+                    &__image{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 25px;
+                        background-image: url("/images/happy_face.jpg");
+                      background-repeat: no-repeat;
+                      background-position: center;
+                      background-size: cover;
+                    }
+                    &__right{
+                        @include flexCenter(column);
+                        align-items: flex-start;
+                        &__title{
+                            font-family: $font-family1;
+                            font-size: 16px;
+                            margin-left: 15px;
+                        }
+                        &__date{
+                            margin-left: 15px;
+                            font-size: 12px;
+                            color: $grayColor1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.ninehome-container {
+  @include flexCenter(column);
+  position: relative;
+  height: 729px;
+  background-image: url("/images/poolnight.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: cover;
+  @include mobile {
+    flex-wrap: wrap;
+  }
+  &__block {
+    @include flexCenter(column);
+    color: white;
+
+    &__quote {
+      margin-top: 70px;
+      color: $mainColorDark;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 2px white;
+    }
+    &__title {
+      margin: 100px;
+      font-family: $font-family1;
+      font-size: 60px;
+      text-align: center;
+      @include mobile {
+        font-size: 30px;
+        margin: 10px;
+      }
+    }
+    &__btns {
+      margin-bottom: 40px;
+      @include flexCenter(row);
+      &__btn1 {
+        @include btn_brown();
+        letter-spacing: 2.8px;
+        font-size: 14px;
+        height: 60px;
+        width: 260px;
+        margin-right: 10px;
+      }
+      &__btn2 {
+        letter-spacing: 2.8px;
+        font-size: 14px;
+        height: 60px;
+        width: 260px;
+        margin-left: 10px;
+        color: white;
+        border: 1px solid white;
+        background: none;
+        padding: 8px;
+        padding-inline: 30px;
+        &:hover {
+          background-color: $mainColorDark;
+        }
+      }
+    }
+  }
+}

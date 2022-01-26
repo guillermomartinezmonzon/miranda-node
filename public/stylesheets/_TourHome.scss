@@ -1,0 +1,82 @@
+.tourhome-container {
+  @include flexCenter(column);
+  position: relative;
+  height: 600px;
+  @include mobile {
+    top: 300px;
+    height: 600px;
+  }
+  background-image: url("/images/palmo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: cover;
+  &__box {
+    @include flexCenter(row);
+
+    width: 80%;
+    height: 70%;
+    @include mobile {
+      width: 98%;
+      height: 98%;
+      flex-wrap: wrap;
+    }
+    &__left {
+        display: flex;
+        flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 30%;
+      height: 100%;
+      margin-right: 50px;
+      @include mobile {
+        width: 90%;
+        height: 40%;
+        margin-right: 5px;
+        // margin-bottom: 5px;
+      }
+
+      &__tour {
+        color: $grayColor1;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2.8px;
+      }
+
+      &__title {
+        color: black;
+        font-family: $font-family1;
+        font-size: 80px;
+        @include mobile {
+          font-size: 30px;
+        }
+      }
+      &__text {
+        margin-top: 30px;
+        color: $grayColor1;
+        font-size: 14px;
+        @include mobile {
+          margin-top: 4px;
+        }
+      }
+
+      &__btn {
+        margin-top: 30px;
+        width: 216px;
+        height: 60px;
+        font-size: 14px;
+        letter-spacing: 2.8px;
+        @include btn_brown();
+      }
+    }
+    &__right {
+        width: 612px;
+        height: 480px;
+      @include mobile {
+        width: 98%;
+        height: 40%;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

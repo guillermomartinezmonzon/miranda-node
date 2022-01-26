@@ -1,0 +1,149 @@
+.separator-header {
+  display: flex;
+  color: $mainColor;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.header-container {
+  flex-direction: column;
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    @include mobile {
+      background-image: url("/images/room1.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+
+    &__left {
+      margin-right: 2rem;
+      &__header {
+        @include mobile {
+            display: none;
+        }  
+        color: $grayColor1;
+        font-size: 14px;
+        letter-spacing: 2.8px;
+      }
+      &__title {
+        font-family: $font-family1;
+        font-size: 120px;
+        letter-spacing: -3.6px;
+        font-weight: 400;
+        @include mobile {
+          font-size: 50px;
+          text-shadow: white 1px 0 1px;
+        }
+      }
+      &__buttons {
+        display: flex;
+        &--btnLeft {
+            @include btn_brown();
+            margin-right: 10px;
+        }
+
+        &--btnRight {
+            @include btn_white();
+        }
+      }
+    }
+
+    &__right {
+      @include mobile{
+        display: none;
+      }
+      margin-left: 2rem;
+      width: 669px;
+      height: 710px;
+      background-image: url("/images/room1.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+  }
+}
+
+.header-book-container {
+  $number-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 110px;
+
+  &__card {
+    box-shadow: $boxShadowCool2;
+    margin: 6px;
+    padding-inline: 8px;
+    width: 180px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+
+    &__text {
+      margin: 0;
+      display: flex;
+      color: $grayColor1;
+      letter-spacing: 2.8px;
+      padding-top: 8px;
+    }
+    &__down {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+
+      &__number {
+        margin: 0;
+        font-size: $number-size;
+        font-family: $font-family1;
+      }
+
+      &__month {
+        padding-left: 8px;
+        font-size:14px;
+        color: $grayColor1;
+        letter-spacing: 2.8px;
+        display: flex;
+      }
+    }
+  }
+
+  &__bookNow {
+    box-shadow: $boxShadowCool2;
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 361px;
+    height: 150px;
+    background-color: $mainColor;
+    &__icon {
+        margin-left: 45px;
+        margin-right: 20px;
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+      &__text {
+        font-size: 14px;
+        color: white;
+      }
+      &__bookNow {
+        margin: 0;
+        font-family: $font-family1;
+        font-size: 40px;
+        color: white;
+      }
+    }
+  }
+}

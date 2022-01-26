@@ -1,0 +1,136 @@
+@import "./media-queries";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-container {
+  a{
+      text-decoration: none;
+      color: black;
+  }
+  @include flexCenter;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between;
+  padding: $padding-cool;
+  z-index: 10;
+  list-style: none;
+      white-space:nowrap;
+
+  &__logo {
+    &__brand {
+      @include flexCenter;
+      flex-direction: column;
+      align-items: flex-start;
+      letter-spacing: 1px;
+      margin-left: 8px;
+      margin-right: 18px;
+      font-size: 0.8rem;
+
+      &--bold {
+        font-weight: 900;
+      }
+    }
+
+    &__h {
+      width: 57px;
+      height: 57px;
+      background-image: url("/images/H.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__phoneIcon {
+    @include mobile {
+      display: none;
+    }
+    align-items: stretch;
+    margin-right: 8px;
+  }
+
+  &__textPhone {
+    @include mobile {
+      display: none;
+    }
+    color: $grayColor1;
+    font-weight: 250;
+    font-size: 10px;
+  }
+
+  &__phone {
+    @include mobile {
+      display: none;
+    }
+    padding-top: 0.2rem;
+    letter-spacing: 2px;
+    font-family: $font-family2;
+    font-weight: 520;
+    font-size: 14px;
+  }
+
+  &__mailIcon {
+    @include mobile {
+      display: none;
+    }
+    margin-right: 8px;
+  }
+
+  &__textMail {
+    @include mobile {
+      display: none;
+    }
+    color: $grayColor1;
+    font-weight: 250;
+    font-size: 10px;
+  }
+
+  &__mail {
+    @include mobile {
+      display: none;
+    }
+    padding-top: 0.2rem;
+    letter-spacing: 2px;
+    font-family: $font-family2;
+    font-weight: 520;
+    font-size: 14px;
+  }
+
+  &__bars {
+    opacity: 0;
+
+    @include mobile {
+      color: black;
+      opacity: 1;
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      font-size: 2rem;
+    }
+  }
+
+  &__menu {
+    text-align: center;
+    margin-right: 24px;
+
+    @include mobile {
+      display: none;
+    }
+
+    &--links {
+      margin-inline: 10px 10px;
+      justify-content: center;
+      text-decoration: none;
+
+      &:hover {
+        color: $mainColor;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

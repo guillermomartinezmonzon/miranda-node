@@ -1,0 +1,9 @@
+.room-offer-card-container
+  .room-offer-card-container__image
+  .room-offer-card-container__card
+    include ./iconsRoomCard.pug 
+    .room-offer-card-container__card__title= `${room.name} - ${room.number}`
+    .room-offer-card-container__card__text= room.facilities
+    .room-offer-card-container__card__book
+      .room-offer-card-container__card__book__price= `$${room.price}/night`
+      a.room-offer-card-container__card__book__booking(href=`room/${room.id}`) Booking Now

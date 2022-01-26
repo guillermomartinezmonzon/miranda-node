@@ -1,0 +1,38 @@
+extends ../layout.pug
+block content
+  - var title = 'Contact Us'
+  - var quote = 'THE ULTIMATE LUXURY'
+  include ../header.pug
+  .contact-container
+    .contact-container__head
+      .contact-container__head__card
+        .contact-container__head__card__icon
+          i.fas.fa-map.fa-3x
+        .contact-container__head__card__right
+          .contact-container__head__card__right__title Office Address  
+          .contact-container__head__card__right__text Calle Puerta del Sol, 28001 Madrid 
+      .contact-container__head__card
+        .contact-container__head__card__icon
+          i.fas.fa-phone.fa-3x
+        .contact-container__head__card__right
+          .contact-container__head__card__right__title Phone Number  
+          .contact-container__head__card__right__text + 34 666 33 99 66 
+      .contact-container__head__card
+        .contact-container__head__card__icon
+          i.fas.fa-envelope.fa-3x
+        .contact-container__head__card__right
+          .contact-container__head__card__right__title Email address  
+          .contact-container__head__card__right__text guillermomartinez@gmonzon.com 
+    .contact-container__map
+      include ../map.pug  
+    .contact-container__form
+      .contact-container__form__top
+        input.contact-container__form__top__input1(type='text', name='name' placeholder='Enter name') 
+        input.contact-container__form__top__input1(type='text', name='email' placeholder='Enter email') 
+      .contact-container__form__middle
+        input.contact-container__form__middle__input1(type='text', name='phone' value='Enter your phone') 
+        input.contact-container__form__middle__input1(type='text', name='subject' placeholder='Enter subject') 
+      .contact-container__form__down
+        input.contact-container__form__down__input2(type='text', name='message' placeholder='Enter message') 
+        button.contact-container__form__down__button GET FREE QUOTE
+    include ../subscribe.pug    

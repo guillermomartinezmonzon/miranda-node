@@ -1,0 +1,95 @@
+.sliderhome-container {
+  height: 450px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  &__card {
+    $marginLeft: 20px;
+    @include flexCenter(column);
+    align-items: flex-start;
+    color: white;
+    position: absolute;
+    margin-top: 30px;
+    left: 380px;
+    width: 300px;
+    height: 350px;
+    background-color: #111111;
+    @include mobile {
+      // top: 380px;
+      left: 100px;
+      width: 250px;
+      height: 300px;
+    }
+    &__icon {
+      margin-left: $marginLeft;
+      margin-bottom: $marginLeft;
+      width: 70px;
+      height: 70px;
+      background-image: url("/images/luxroom.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+    &__title {
+      margin-left: $marginLeft;
+      font-family: $font-family1;
+      font-size: 25px;
+    }
+    &__text {
+      margin-left: $marginLeft;
+      margin-right: $marginLeft;
+      color: $grayColor1;
+      font-size: 14px;
+    }
+    &__lines {
+      margin-left: $marginLeft;
+      @include flexCenter(row);
+      margin-top: 20px;
+      height: 3px;
+      align-self: flex-start;
+      &__line {
+        margin-inline: 6px;
+        width: 20px;
+        height: 100%;
+        background-color: $mainColor;
+      }
+    }
+  }
+
+  &__grid {
+    height: 100%;
+    @include flexCenter(row);
+
+    @mixin images2($url) {
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 25%;
+      height: 100%;
+      background-image: url($url);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      background-size: cover;
+    }
+
+    &__img1 {
+      @include images2("/images/r1.jpg");
+      width: 12.5%;
+      margin-left: -10px;
+    }
+    &__img2 {
+      @include images2("/images/r2.jpg");
+    }
+    &__img3 {
+      @include images2("/images/r4.jpg");
+    }
+    &__img4 {
+      @include images2("/images/r5.jpg");
+    }
+    &__img5 {
+      @include images2("/images/r2.jpg");
+      width: 12.5%;
+      margin-right: -10px;
+    }
+  }
+}
