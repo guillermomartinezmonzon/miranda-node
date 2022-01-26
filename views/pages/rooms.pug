@@ -1,0 +1,10 @@
+extends ../layout.pug
+block content
+  - var title = 'Ultimate Room'
+  - var quote = 'THE ULTIMATE LUXURY'
+  include ../header.pug
+  .rooms-grid-container
+    .rooms-grid-container__grid 
+      each room in rooms
+        include ../roomCard.pug
+  include ../subscribe.pug

@@ -1,0 +1,119 @@
+.blog-home {
+    background-color: $body_background-color;
+    @include flexCenter(column);
+    &__blog-container {
+        @include flexCenter(column);
+        width: 1180px;
+        height: 790px;
+        margin-top: 118px;
+        &__head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            &__left {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                &__blog{
+                    @include quote();
+                }
+                &__news-feeds{
+                    @include title();
+                    margin-top: 20px;
+                }
+            }
+            &__right {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                flex-direction: row;
+                &__arrow{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;
+                    width: 70px;
+                    height: 70px;
+                    font-size: 35px;
+                    margin: 5px;
+                    box-shadow: 0 1px 0 rgba(0,0,0,.15);
+                    &:hover{
+                        background-color: $mainColor;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }    
+        &__down{
+            @include flexCenter(row);
+            margin-top: 60px;
+            color: #777777;
+            &__card{
+                @include flexCenter(column);
+                box-shadow: 0 1px 0 rgba(0,0,0,.15);
+                height: 100%;
+                margin: 15px;
+                background-color: white;
+                &__head{
+                    margin: 18px;
+                    font-size: 14px; 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    &__date{
+                        margin-top: 40px;
+                        align-text: left;
+                        white-space:nowrap;
+                        text-align: left;
+                    }
+                    &__space{
+                        width: 110px;
+                    }
+                    &__author{
+                        margin-top: 40px;
+                        text-align: right;
+                        white-space:nowrap;
+                    }
+                }
+                &__title{
+                    color: black;
+                    font-family: "OldStandardTT-Regular";
+                    font-size: 24px;
+                    margin-left: 48px;
+                    margin-right: 48px;
+                }
+                &__text{
+                    margin-top: 20px;
+                    margin-left: 48px;
+                    margin-right: 48px;
+                    margin-bottom: 48px;
+                }
+                &__image1{
+                    height: 260px;
+                    width: 370px;
+                    background-image: url('/images/room1.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                &__image2{
+                    height: 260px;
+                    width: 370px;
+                    background-image: url('/images/jarron1.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                &__image3{
+                    height: 260px;
+                    width: 370px;
+                    background-image: url('/images/shushi.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}

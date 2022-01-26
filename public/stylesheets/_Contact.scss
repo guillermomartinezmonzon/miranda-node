@@ -1,0 +1,102 @@
+.contact-container{
+    @include flexCenter(column);
+    width: 100%;
+    background-color: $body_background_color;
+    &__head{
+        @include flexCenter(row);
+        width: 1170px;
+        &__card{
+            @include flexCenter(row);
+            margin-inline: 15px;
+            margin-top: 120px;
+            background-color: white;
+            width:370px;
+            height: 189px;
+            &__icon{
+                color: $mainColor;
+            }
+            &__right{
+                margin-left: 20px;
+                &__title{
+                    font-size: 24px;
+                }
+                &__text{
+                    font-size: 16px;
+                    color: $grayColor1;
+                }
+            }
+        }
+    }
+    &__form{
+        background-color: white;
+        @include flexCenter(column);
+        width: 1170px;
+        margin-bottom: 120px;
+        &__top{
+            margin-top: 10px;
+            @include flexCenter(row);
+            &__input1{
+                padding-left: 30px;
+                font-size: 16px;
+                margin: 15px;
+                border: none;
+                color: $grayColor1;
+                background-color: $body_background_color;
+               width: 470px;
+               height: 67px; 
+            }
+        }
+        &__middle{
+            @include flexCenter(row);
+            &__input1{
+                padding-left: 30px;
+                font-size: 16px;
+                margin: 15px;
+                border: none;
+                color: $grayColor1;
+                background-color: $body_background_color;
+               width: 470px;
+               height: 67px; 
+            }
+        }
+        &__down{
+            @include flexCenter(column);
+            margin-bottom: 30px;
+            &__button{
+                background-color: $mainColor;
+                color: white;
+                text-align: center;
+                letter-spacing: 3.2px;
+                width: 258px;
+                height: 60px;
+                margin-top: 30px;
+                &:hover{
+                    background-color: $mainColorDark;
+                    cursor: pointer;
+                }
+            }
+            &__input2{
+                padding-left: 30px;
+                font-size: 16px;
+                margin-top: 15px;
+                border: none;
+                color: $grayColor1;
+                background-color: $body_background_color;
+               width: 990px;
+               height: 250px; 
+            }
+        }
+    }
+    &__map{
+        @include flexCenter(column);
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+        height: 100%;
+    }
+}
+.map{
+    background-image: url("/images/map.png");
+    width: 1170px;
+    height: 600px;
+}

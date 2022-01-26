@@ -1,0 +1,138 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+// @mixin btn_brown {
+//   border: none;
+//   color: white;
+//   font-size: 8px;
+//   letter-spacing: 1.5px;
+//   font-weight: 520;
+//   background-color: $mainColor;
+//   padding: 8px;
+//   padding-inline: 30px;
+//   margin-bottom: 30px;
+//   &:hover {
+//     background-color: $mainColorDark;
+//   }
+// }
+
+.lodging-container {
+  @include flexCenter(column);
+  width: 101%;
+
+  background-image: url("/images/palmo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: cover;
+
+  margin-top: 100px;
+  @include mobile {
+    margin-top: 200px;
+  }
+
+  &__box {
+    @include mobile {
+      width: 100%;
+    }
+    width: 80%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__text {
+      font-size: 12px;
+      align-self: flex-start;
+    }
+    &__nav {
+      @include flexCenter(row);
+      justify-content: space-between;
+      margin-bottom: 20px;
+      &__title {
+        @include flexCenter(column);
+        font-family: $font-family1;
+        font-size: 40px;
+      }
+
+      &__menu {
+        @include flexCenter(row);
+        align-self: flex-end;
+        flex-wrap: wrap;
+        color: $grayColor1;
+        font-size: 9px;
+
+        &--links {
+          margin: 20px;
+          color: $grayColor1;
+          font-size: 16px;
+          text-decoration: none;
+          padding: 20px;
+          &:hover {
+              margin: 18.5px;
+              color: $grayColor1;
+              color: $grayColor2;
+              border: 1.5px solid $grayColor2;
+          }
+        }
+      }
+    }
+
+    /// Image grid
+
+    &__grid {
+      height: 400px;
+      @mixin images {
+        margin: 1%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+        background-size: cover;
+        width: 99%;
+        height: 99%;
+      }
+      @include flexCenter(row);
+
+      &__left {
+        width: 99%;
+        height: 99%;
+        &__top {
+          @include flexCenter(row);
+          width: 99%;
+          height: 49%;
+
+          &__card1 {
+            @include images();
+            background-image: url("/images/jarron1.jpg");
+          }
+
+          &__card2 {
+            @include images();
+            background-image: url("/images/shushi.jpg");
+          }
+        }
+        &__down {
+          @include images();
+          height: 49%;
+          width: 97%;
+          background-image: url("/images/room3.png");
+        }
+      }
+
+      &__right {
+        @include images();
+        margin-top: 0;
+        margin-left: 0;
+        width: 38%;
+        height: 98%;
+
+        background-image: url("/images/patio1.jpg");
+      }
+    }
+  }
+
+  &__btn {
+    @include btn_brown();
+    margin-bottom: 20px;
+  }
+}
