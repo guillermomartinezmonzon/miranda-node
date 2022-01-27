@@ -7,7 +7,7 @@ controller.login = (req, res) => {
         response => {
            return res.send(response)
         }
-    ).catch(e => { return res.status(404).send(e)})
+    ).catch(e => { return res.status(401).send(e)})
 }
 
 controller.signUp = (req, res, next) => {

@@ -31,6 +31,8 @@ passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
 
 async function validateAdmin(email, password){
     try {
+        console.log("Login try:");
+        console.log(email, password);
         let message = "Wrong credentials"
         let user = await User.findOne({ email : email })
         if (user === null) return message;
@@ -39,7 +41,15 @@ async function validateAdmin(email, password){
                 {email: email, password: password},
                 secret,
                 { expiresIn: "14d" })
-            return { token: "Bearer " + token }
+            const payload = {
+                name: user.name,
+                email: user.email,
+                description: user.description,
+                phone: user.phone,
+                job: user.job,
+                image: user.image
+            }
+            return { user: payload, token: "Bearer " + token }
         } else {
             return message;
         }
