@@ -5,7 +5,11 @@ const controller = {};
 controller.login = (req, res) => {
     validateAdmin(req.body.email,req.body.password).then(
         response => {
-           return res.send(response)
+            let r = response;
+            r.user.hash = undefined;
+            r.user.salt = undefined;
+            r.user.__v = undefined;
+           return res.send(r)
         }
     ).catch(e => { return res.status(401).send(e)})
 }

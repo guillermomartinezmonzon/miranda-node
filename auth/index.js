@@ -41,17 +41,6 @@ async function validateAdmin(email, password){
                 {email: email, password: password},
                 secret,
                 { expiresIn: "14d" })
-            delete user.salt;
-            delete user.hash;
-            delete user.__v;
-            // const payload = {
-            //     name: user.name,
-            //     email: user.email,
-            //     description: user.description,
-            //     phone: user.phone,
-            //     job: user.job,
-            //     image: user.image
-            // }
             return { user: user, token: "Bearer " + token }
         } else {
             return message;
