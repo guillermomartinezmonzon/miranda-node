@@ -12,6 +12,10 @@ controller.getUsers = async (req, res) => {
 
 controller.deleteUser = async (req, res) => {
     try{
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         await User.findByIdAndDelete(req.params.element)
         return res.send("Sucessfully deleted") 
     } catch(e){
@@ -22,7 +26,11 @@ controller.deleteUser = async (req, res) => {
 
 controller.editUser = async (req, res) => {
     try{
-        await User.findOneAndUpdate(req.params.element, req.body).clone(); 
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
+        await User.findOneAndUpdate({ email: req.params.element}, req.body).clone(); 
         return res.send("Sucessfully edited")
     } catch(e){
         console.log(e);
@@ -32,6 +40,10 @@ controller.editUser = async (req, res) => {
 
 controller.searchUser = async (req, res) => {
     try{
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         return res.send(await User.findById(req.params.element));
     } catch(e){
         console.log(e);

@@ -15,6 +15,10 @@ controller.getRooms = async (req, res) => {
 
 controller.deleteRoom = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         Room.findByIdAndDelete(req.params.element, function (e) {
           if (e) throw e; 
           res.send("Sucessfully deleted");
@@ -27,6 +31,10 @@ controller.deleteRoom = async (req, res) => {
 
 controller.editRoom = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         let response = await Room.findByIdAndUpdate(req.params.element, req.body)
         return res.send("Sucessfully edited");
     } catch(e) {
@@ -37,6 +45,10 @@ controller.editRoom = async (req, res) => {
 
 controller.searchRoom = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         const results = await Room.findById(req.params.element);
         return res.send(results)
     } catch(e) {

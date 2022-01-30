@@ -41,15 +41,18 @@ async function validateAdmin(email, password){
                 {email: email, password: password},
                 secret,
                 { expiresIn: "14d" })
-            const payload = {
-                name: user.name,
-                email: user.email,
-                description: user.description,
-                phone: user.phone,
-                job: user.job,
-                image: user.image
-            }
-            return { user: payload, token: "Bearer " + token }
+            delete user.salt;
+            delete user.hash;
+            delete user.__v;
+            // const payload = {
+            //     name: user.name,
+            //     email: user.email,
+            //     description: user.description,
+            //     phone: user.phone,
+            //     job: user.job,
+            //     image: user.image
+            // }
+            return { user: user, token: "Bearer " + token }
         } else {
             return message;
         }

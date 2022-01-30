@@ -13,6 +13,10 @@ controller.getContact = async (req, res) => {
 
 controller.deleteContact = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         await Contact.findByIdAndDelete(req.params.element)
         return res.send("Sucessfully deleted")
     } catch(e) {
@@ -23,6 +27,10 @@ controller.deleteContact = async (req, res) => {
 
 controller.editContact = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         await Contact.findByIdAndUpdate( req.params.element, req.body)
         return res.send("Sucessfully edited")
     } catch(e) {
@@ -33,6 +41,10 @@ controller.editContact = async (req, res) => {
 
 controller.searchContact = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         const results = await Contact.findById(req.params.element)
         return res.send(results)
     } catch(e) {

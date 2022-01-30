@@ -12,6 +12,10 @@ controller.getGuests = async (req, res) => {
 
 controller.deleteGuest = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         const results = await Guest.findByIdAndDelete(req.params.element); 
         return res.send("Sucessfully deleted")
     } catch(e) {
@@ -21,6 +25,10 @@ controller.deleteGuest = async (req, res) => {
 
 controller.editGuest = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         const results = await Guest.findByIdAndUpdate(req.params.element, req.body)
         return res.send("Sucessfully edited")
     } catch(e) {
@@ -30,6 +38,10 @@ controller.editGuest = async (req, res) => {
 
 controller.searchGuest = async (req, res) => {
     try {
+        var checkForHexRegExp = new RegExp("^[0-9a-fA-F]{24}$")
+        if(!checkForHexRegExp.test(req.params.element)) {
+            return res.status(404).send("Invalid URL");
+        }
         const results = await Guest.findById(req.params.element)
         return res.send(results)
     } catch(e) {

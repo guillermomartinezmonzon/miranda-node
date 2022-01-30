@@ -19,8 +19,8 @@ var Room = mongoose.model('Room', RoomSchema, 'rooms');
 
 // Booking
 var BookingSchema = mongoose.Schema({
-    guestId: String,
-    roomId: String,
+    guest: {},
+    room: {},
     checkIn: Date,
     checkOut: Date,
     specialRequest: String,
